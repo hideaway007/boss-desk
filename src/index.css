@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #f6f3ec;
+  --bg-surface: #fdfbf7;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #efeae0;
+  --ink-primary: #161513;
+  --ink-secondary: #57534d;
+  --ink-muted: #8a847a;
+  --border-hairline: rgba(22, 21, 19, 0.09);
+  --border-strong: rgba(22, 21, 19, 0.18);
+  --brand-accent: #c83e2b;
+  --brand-accent-soft: rgba(200, 62, 43, 0.1);
+}
+
+[data-workspace="sartoria-image"] {
+  --brand-accent: #9a6b32;
+  --brand-accent-soft: rgba(154, 107, 50, 0.12);
+}
+
+[data-workspace="apex-trade"] {
+  --brand-accent: #1b5e4a;
+  --brand-accent-soft: rgba(27, 94, 74, 0.11);
+}
+
+html,
+body {
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-editorial {
+  font-family: "Newsreader", "Noto Serif SC", Georgia, serif;
+}
+
+.font-display-serif {
+  font-family: "Instrument Serif", "Noto Serif SC", Georgia, serif;
+}
+
+.font-mono-num {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle tactile paper grain overlay */
+.paper-grain {
+  background-image: radial-gradient(rgba(22, 21, 19, 0.035) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 21, 19, 0.14);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 21, 19, 0.28);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.75;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
